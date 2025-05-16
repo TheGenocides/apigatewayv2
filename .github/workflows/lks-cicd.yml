@@ -1,5 +1,7 @@
 name: CI/CD Pipeline
 
+concurrency: production
+
 on:
   push:
     branches:
