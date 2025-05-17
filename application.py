@@ -49,7 +49,7 @@ def add_user():
         image_filename = f"users/{image.filename}"
         try:
             s3_client.upload_fileobj(image, S3_BUCKET, image_filename)
-            image_url = f"https://{S3_BUCKET}.s3-{AWS_REGION}.amazonaws.com/{image_filename}"
+            image_url = f"https://{S3_BUCKET}.s3.{AWS_REGION}.amazonaws.com/{image_filename}"
         except Exception as e:
             print(e.with_traceback(None))
             return jsonify({"error": str(e)}), 500
